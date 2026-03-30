@@ -1,0 +1,7 @@
+{
+  "name": "client_oneandro",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "react"
+}
