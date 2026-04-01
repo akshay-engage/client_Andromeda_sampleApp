@@ -4,6 +4,7 @@ import {
   IonItem, IonLabel, IonInput, IonButton, IonText
 } from '@ionic/react';
 import { useHistory } from 'react-router-dom';
+import { WebengageUser } from "@awesome-cordova-plugins/webengage";
 
 const Login: React.FC = () => {
   const history = useHistory();
@@ -24,6 +25,8 @@ const Login: React.FC = () => {
     if(password) {
       localStorage.setItem('auth_token', 'mock_token_' + Date.now());
     }
+    WebengageUser.login(username);
+
     localStorage.setItem('user', username);
     console.log('[EVENT] login_success', { user: username, timestamp: Date.now() });
     history.push('/dashboard');

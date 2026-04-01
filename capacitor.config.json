@@ -16,6 +16,9 @@
     },
     "PrivacyScreen": {
       "enable": true
+    },
+    "PushNotifications": {
+      "presentationOptions": ["badge", "sound", "alert"]
     }
   }
 }
