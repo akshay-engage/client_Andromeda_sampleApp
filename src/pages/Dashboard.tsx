@@ -4,6 +4,7 @@ import {
   IonButton, IonItem, IonLabel, IonInput, IonList, IonText, IonButtons
 } from '@ionic/react';
 import { useHistory } from 'react-router-dom';
+import { Webengage } from '@awesome-cordova-plugins/webengage';
 
 interface TrackedEvent {
   name: string;
@@ -20,7 +21,8 @@ const Dashboard: React.FC = () => {
     if (!eventName.trim()) return;
     const newEvent: TrackedEvent = { name: eventName.trim(), timestamp: Date.now() };
     setEvents((prev) => [newEvent, ...prev]);
-    console.log('[EVENT] tracked', newEvent);
+    console.log('[EVENT] tracked', newEvent.name, " | Time = ",newEvent.timestamp);
+    Webengage.track(newEvent.name)
     setEventName('');
   };
 
